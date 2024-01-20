@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <title>ChatBot</title>
 </head>
@@ -18,10 +19,11 @@
         <!-- CHATBOX BODY -->
         <section class="chatbox-body">
             <div class="chatbox-msgs">
-                
+           
             </div>
             <div class="chatbox-user-input">
                 <input type="text" id="user-input" placeholder="Type a reply...">
+                <!-- <button class="btn">submit</button> -->
                 <div class="chatbox-user-send-icons">
                     <img src="./images/gif.png" alt="" class="chatbox-user-send-icons-gif">
                     <img src="./images/happy.png" alt="" class="chatbox-user-send-icons-happy">
@@ -32,13 +34,14 @@
     </main>
     <!-- CHATBOX ICON -->
     <div class="up-down-icon">
-        <div class="up-down-icon-up icon show hide">
+        <div class="up-down-icon-up icon">
             <i class="fa-solid fa-chevron-up"></i>
         </div>
-        <div class="up-down-icon-down icon show hide">
+        <div class="up-down-icon-down icon">
             <i class="fa-solid fa-chevron-down"></i>
         </div>
     </div>
+    <script src="./messages.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>

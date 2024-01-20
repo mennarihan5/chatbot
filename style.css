@@ -15,35 +15,39 @@
     --black: #000000;
     --darkGrey: #737376;
     --boxShadowGrey: rgba(115,115,118,0.66);
+    --mediumGrey: #D4D4D4;
+    --lightYellow: #fff4d0;
 }
 body {
     background-color: var(--lightGrey);
-    height: 100vh;
+    height: 80vh;
+    width: 100%;
 }
 /* MAIN CONTAINER */
 .main-container {
-    width: 28%;
-    height: 60vh;
-    margin: 17% 0 0 71%;
+    width: 25vw;
+    height: 65vh;
+    position: absolute;
+    top: 170px;
+    right: 50px;
     border-radius: 15px;
     box-shadow: 0px 4px 14px 0px var(--boxShadowGrey);
     font-family: "Inter", sans-serif;
-    background-color: var(--white);
-    
+    background-color: var(--white); 
+    display: none;
 }
+
 /* CHATBOX HEADER */
 .chatbox-header-wrapper {
     background-color: var(--primaryBlue);
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     height: 80px;
-    
-    
 }
 .chatbox-header {
     display: flex;
     justify-content: space-between;
-    width: 48%;
+    width: 37%;
     height: 100%;
     align-items: center;
     margin-left: 5%;
@@ -53,16 +57,28 @@ body {
 
 }
 .header-agent-img {
-    width: 28%;
+    width: 35%;
     margin-right: 10%;
     position: relative;
-
 }
 .header-agent-img img {
     width: 100%;
     overflow: hidden;
 }
-
+.bot {
+    margin-left: 2%;
+}
+.bot img {
+    width: 48px;
+    height: 48px;
+}
+.hannah {
+    margin-left: 10%;
+}
+.hannah img {
+    width: 43px;
+    height: 43px;
+}
 .header-agent-img::after {
     position: absolute;
     content: "";
@@ -73,6 +89,12 @@ body {
     z-index: 1;
     bottom: 6px;
     left: 30px;
+}
+.header-agent-name-wrapper-hannah {
+
+}
+.header-agent-name-wrapper-bot {
+    margin-right: 5%;
 }
 .header-agent-name {
     font-weight: 500;
@@ -85,57 +107,90 @@ body {
     font-size: 14px;
     line-height: 18px;
 }
+.chatbox-bot-img img {
+    height: 46px;
+}
+
 /* CHATBOX BODY */
 .chatbox-body {
-    
-
+    width: 100%;
 }
 .chatbox-msgs {
     overflow: scroll;
-    width: 100%;
-    height: 43vh;
-}
-.chatbox-bot-msg {
 
+    height: 46vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    font-size: 15px;
 }
-.chatbox-bot-img {
-
-}
-.chatbox-bot-msg-txt {
-
-}
-.chatbox-user-input {
-
-}
-.chatbox-hannah-msg {
-
-}
-.chatbox-hannah-img {
-
+.chatbox-bot-msg-wrapper, .chatbox-hannah-msg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 .chatbox-hannah-msg-txt {
-
+    line-height: 1.5;
 }
+.chatbox-bot-msg, .chatbox-hannah-msg-txt-wrapper {
+    background-color: var(--lightGrey);
+    border-radius: 10px;
+    padding: 20px;
+  
+}
+.user-msg {
+    background-color: var(--primaryBlue);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--white);
+    margin-bottom: 20px;
+    width: max-content;
+    align-self: flex-end;
+}
+
+/* CHATBOX USER INPUT */
 .chatbox-user-input {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid var(--mediumGrey);
+}
+#user-input {
+    width: 100%;
+    height: 65px;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
 
 }
-.user-input {
-
+#user-input:focus {
+    border: none;
 }
 .chatbox-user-send-icons {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin-right: 5%;
 }
 
 /* CHATBOX ICON */
 .up-down-icon {
     position: absolute;
-    bottom: 2%;
-    right: 2%;
+    bottom: 40px;
+    right: 73px;
 }
 .up-down-icon-up {
     position: relative;
     font-size: 20px;
     color: var(--white);
+    display: block;
+    cursor: pointer;
 }
 .up-down-icon-up::after {
     position: absolute;
@@ -145,26 +200,24 @@ body {
     height: 60px;
     z-index: -1;
     border-radius: 50%;
-    right: -6px;
-    bottom: -3px;
+    right: -19px;
+    bottom: -14px;
 }
 .up-down-icon-down {
     position: relative;
     font-size: 20px;
     color: var(--white);
+    display: none;
+    cursor: pointer;
 }
 .up-down-icon-down::after {
     position: absolute;
     content: "";
     background-color: var(--primaryBlue);
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     z-index: -1;
     border-radius: 50%;
-}
-.hide {
-    display: none;
-}
-.show {
-    display: block;
+    right: -19px;
+    bottom: -14px;
 }
